@@ -16,7 +16,7 @@ The number of annulus, and their colors and width could be customed.
 
 ___
 [中文]  
-这是一个椭圆形态的iOS按钮。同时它也展示了创建不规则View的一种方式。只有圆内的区域可被点击。
+这是一个椭圆形态的iOS按钮。同时它也展示了创建不规则View的一种方式。只有圆内的区域可被点击。
 
 ## 使用
 拷贝**/EllipseButton**目录下源代码到您的项目中，就可以像使用`UIButton`那样使用它。
