@@ -11,6 +11,7 @@
 @interface EllipseButton() {
     CGFloat centerX,centerY,rX,rY;
     CAShapeLayer *ellipseLayer;
+    UIColor *ellipseColor;
 }
 
 @end
@@ -42,20 +43,22 @@ IB_DESIGNABLE
                          [UIColor colorWithRed:166.0/255.0 green:219.0/255.0 blue:217.0/255.0 alpha:1.0]];
     _annulusWidth = 8.0;
     
-    [self createEllipseLayer];
+    [self createOrRefreshEllipseLayer];
 #if !TARGET_INTERFACE_BUILDER
     [self createAnnulus];
 #endif
-
+    
 }
 
-- (void)createEllipseLayer {
+- (void)createOrRefreshEllipseLayer {
     if (ellipseLayer == nil) {
         ellipseLayer = [CAShapeLayer layer];
-        ellipseLayer.path = [[UIBezierPath bezierPathWithOvalInRect:self.bounds] CGPath];
-        ellipseLayer.fillColor = self.backgroundColor.CGColor;
+        ellipseLayer.fillColor = ellipseColor ? ellipseColor.CGColor : self.backgroundColor.CGColor;
+        ellipseLayer.zPosition = -999;
         [self.layer insertSublayer:ellipseLayer atIndex:0];
     }
+    
+    ellipseLayer.path = [[UIBezierPath bezierPathWithOvalInRect:self.bounds] CGPath];
 }
 
 
@@ -64,6 +67,8 @@ IB_DESIGNABLE
     [super setFrame:frame];
     rX = centerX = frame.size.width / 2.0;
     rY = centerY = frame.size.height / 2.0;
+    
+    [self createOrRefreshEllipseLayer];
     
     if (_numberOfAnnulus > 0) {
         if (ellipseLayer.sublayers.count <= 0) {
@@ -77,8 +82,8 @@ IB_DESIGNABLE
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
     [super setBackgroundColor:UIColor.clearColor];
-
-    [self createAnnulus];
+    
+    ellipseColor = backgroundColor;
     ellipseLayer.fillColor = backgroundColor.CGColor;
 }
 

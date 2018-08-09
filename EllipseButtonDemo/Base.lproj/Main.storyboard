@@ -21,6 +21,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5i-T4-Hv0" customClass="EllipseButton">
                                 <rect key="frame" x="87.5" y="120" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.94296455315890404" green="0.9660893851972604" blue="0.96058149928904113" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I5i-T4-Hv0" secondAttribute="height" multiplier="1:1" id="X59-Uk-MDU"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="q1V-0v-BzY"/>
