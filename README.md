@@ -2,7 +2,7 @@
 An iOS button in ellipse shape. And it's also a demonstration of creating irregular views.
 
 <p align="center" >
-<img src="https://github.com/chenyun122/EllipseButton/blob/master/Screenshot/EllipseButton.png?raw=true" alt="EllipseButton" title="EllipseButton" width="35%" height="35%" />
+<img src="https://github.com/chenyun122/EllipseButton/blob/master/Screenshot/EllipseButton.gif?raw=true" alt="EllipseButton" title="EllipseButton" width="35%" height="35%" />
 </p>
 
 Only areas within the ellipse can be clicked.   
